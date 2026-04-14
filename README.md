@@ -4,8 +4,6 @@
 
 This project is an AI-powered command-line email assistant that helps users process and respond to emails more efficiently. It uses a local large language model (LLM) to perform multiple tasks such as summarization, reply generation, tone improvement, and email analysis.
 
-The system goes beyond simple text generation by supporting multi-step workflows, memory, and hybrid reasoning.
-
 ---
 
 ## Why I Built This
@@ -136,4 +134,4 @@ This demonstrates a multi-step AI pipeline rather than a single one-time respons
 
 ## Conclusion
 
-This project demonstrates how LLMs can be integrated into structured systems to perform useful real-world tasks. By combining prompt engineering, rule-based logic, and multi-step workflows, the assistant goes beyond simple text generation to provide more intelligent and flexible functionality.
+This project demonstrates how LLMs can be integrated into structured systems to perform useful real-world tasks. By combining prompt engineering, rule-based logic, and multi-step workflows, the assistant surpasss simple text generation to provide more intelligent and flexible functionality.
