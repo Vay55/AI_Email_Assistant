@@ -1,4 +1,4 @@
-# AI Email Assistant (Advanced)
+# AI Email Assistant
 
 ## Overview
 
