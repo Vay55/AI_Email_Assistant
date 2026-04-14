@@ -52,10 +52,10 @@ I built this project to explore how large language models can be integrated into
 
 ## Tech Stack
 
-* Python
-* Ollama (local LLM runtime)
-* Phi-3 model
-* Command Line Interface (CLI)
+* Language: Python
+* LLM: Ollama (local LLM runtime)
+** Phi-3 model
+* CLI: GitHub actions 
 
 ---
 
