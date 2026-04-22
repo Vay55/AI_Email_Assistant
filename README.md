@@ -2,13 +2,17 @@
 
 ## Overview
 
-This project is an AI-powered command-line email assistant that helps users process and respond to emails more efficiently. It uses a local large language model (LLM) to perform multiple tasks such as summarization, reply generation, tone improvement, and email analysis.
+This project is an AI-powered email assistant designed to help users process and respond to emails more efficiently. It integrates a local Large Language Model (LLM) using Ollama and provides both a command-line interface and a web-based interface for interacting with the system.
+
+The assistant performs multiple tasks such as summarization, reply generation, tone improvement, and email analysis, while supporting multi-step workflows and memory reuse.
 
 ---
 
 ## Why I Built This
 
-I built this project to explore how large language models can be integrated into real-world productivity tools. I was particularly interested in how prompt design and system structure affect the quality and reliability of AI outputs.
+I built this project to explore how large language models can be integrated into real-world productivity tools. I was particularly interested in how prompt design, system structure, and output handling affect the quality and reliability of AI-generated responses.
+
+This project also allowed me to experiment with transitioning from a simple CLI-based system to a full-stack web application.
 
 ---
 
@@ -33,14 +37,16 @@ I built this project to explore how large language models can be integrated into
   Identifies:
 
   * Intent (what the sender wants)
-  * Urgency level (low, medium, high)
-  * Action items
+  * Key action points
+
+* **Urgency Detection**
+  Determines urgency level using:
+
+  * AI-based reasoning
+  * Rule-based keyword detection
 
 * **Hybrid Reasoning (AI vs Rule-Based)**
-  Compares LLM-based urgency detection with a rule-based keyword system to highlight differences in reasoning.
-
-* **Self-Evaluation System**
-  The AI evaluates its own generated replies for clarity, tone, and possible improvements.
+  Compares LLM-generated analysis with rule-based logic to highlight differences in interpretation.
 
 * **Stateful Memory System**
   Stores the last output so it can be reused or refined.
@@ -52,29 +58,68 @@ I built this project to explore how large language models can be integrated into
 
 ## Tech Stack
 
-* Language: Python
-* LLM: Ollama (local LLM runtime)
-* ** Phi-3 model
-* CLI: GitHub actions 
+* **Backend:** Python (Flask)
+* **Frontend:** HTML, CSS, JavaScript
+* **LLM Runtime:** Ollama
+* **Model:** Phi-3 (with optional support for Llama 3)
+
+---
+
+## Project Structure
+
+```bash
+ai-email-assistant/
+│
+├── server.py        # Flask backend (LLM calls)
+├── index.html       # Frontend UI
+├── script.js        # Frontend logic 
+├── main.py          # CLI testing environment for LLM
+└── README.md
+```
+
+---
+
+## About `main.py`
+
+`main.py` was used as a **testing file in the terminal** to evaluate the capabilities of the LLM before implementing it in a web application.
+
+It includes:
+
+* Early versions of all features
+* A menu-based CLI system
+* Prompt experimentation and testing
+
+This step was important to validate functionality and refine prompts before integrating the system into Flask and the frontend UI.
 
 ---
 
 ## How to Run
 
-1. Install Ollama:
-   https://ollama.com
+### 1. Install Ollama
 
-2. Pull and run the model:
+https://ollama.com
 
-   ```bash
-   ollama run phi3
-   ```
+---
 
-3. Run the application:
+### 2. Run a Model
 
-   ```bash
-   python3 main.py
-   ```
+```bash
+ollama run phi3
+```
+
+---
+
+### 3. Start the Backend
+
+```bash
+python3 server.py
+```
+
+---
+
+### 4. Open the Application
+
+Open `index.html` in your browser.
 
 ---
 
@@ -86,7 +131,7 @@ I built this project to explore how large language models can be integrated into
 4. Reuse the output as new input
 5. Summarize the result
 
-This demonstrates a multi-step AI pipeline rather than a single one-time response.
+This demonstrates a **multi-step AI pipeline** rather than a single one-time response.
 
 ---
 
@@ -97,41 +142,53 @@ This demonstrates a multi-step AI pipeline rather than a single one-time respons
 * Vague prompts led to incorrect behavior (e.g., rewriting instead of summarizing)
 * Adding constraints like “one sentence” significantly improved output quality
 
-### 2. Tone and Length Control
+### 2. Output Stability
 
-* Without constraints, replies were inconsistent
-* Specifying tone and sentence limits produced more realistic outputs
+* Smaller models sometimes produced repetition or formatting issues
+* Post-processing (cleaning output) improved reliability
 
 ### 3. Rule-Based vs AI Reasoning
 
 * Rule-based systems are consistent but limited
 * LLMs handle context better but may vary in output
-* Combining both provides useful insights into system behavior
+* Combining both provides more insight into system behavior
 
-### 4. Self-Evaluation
+### 4. Multi-Step Processing
 
-* The model can critique its own responses
-* This enables a feedback loop for improving output quality without retraining
+* Reusing outputs enables more advanced workflows
+* Demonstrates how LLMs can be chained instead of used once
 
 ---
 
 ## Limitations
 
 * The model does not learn over time (no persistent training)
-* Rule-based logic is limited to predefined keywords
 * Output quality depends heavily on prompt design
+* Smaller models may produce unstable or repetitive outputs
+* Rule-based logic is limited to predefined keywords
 
 ---
 
 ## Future Improvements
 
-* Convert to a web application (Streamlit)
-* Add persistent memory (file/database storage)
-* Support multiple tones (casual, friendly, strict)
-* Add email classification (spam, important, etc.)
+* Deploy the application online
+* Add persistent memory (database storage)
+* Improve UI/UX further
+* Support multiple tones (casual, formal, strict)
+* Add email classification (spam, priority, etc.)
+* Upgrade to more advanced models
 
 ---
 
 ## Conclusion
 
-This project demonstrates how LLMs can be integrated into structured systems to perform useful real-world tasks. By combining prompt engineering, rule-based logic, and multi-step workflows, the assistant surpasss simple text generation to provide more intelligent and flexible functionality.
+This project demonstrates how LLMs can be integrated into structured systems to perform useful real-world tasks. By combining prompt engineering, rule-based logic, output processing, and multi-step workflows, the assistant goes beyond simple text generation to provide more controlled and practical functionality.
+
+---
+
+## Status
+
+✔ Completed
+✔ Fully functional
+✔ Available on GitHub
+
