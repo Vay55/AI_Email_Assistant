@@ -36,8 +36,7 @@ def analyze_email_ai(text):
     return ask_llm(
         f"""Analyze this email and provide:
 1. Intent
-2. Urgency (low, medium, high)
-3. Action items
+2. Action items
 
 Keep it short.
 
@@ -133,7 +132,7 @@ def main():
         print("2. Generate Reply")
         print("3. Improve Tone")
         print("4. Analyze Email (AI)")
-        print("5. Compare AI vs Rules")
+        print("5. Urgency Analysis")
         print("6. Evaluate Reply")
         print("7. Improve Last Output (Memory)")
         print("8. Use Last Output as New Input")
