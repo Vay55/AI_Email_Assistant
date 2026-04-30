@@ -10,7 +10,7 @@ The assistant performs multiple tasks such as summarization, reply generation, t
 
 ## DEMO
 
-![App_video](EmailAI.mp4)
+[![App_video](EmailAI.mp4)](https://github.com/user-attachments/assets/34cd484a-f454-409a-94b0-c2fa1ec65934)
 
 ---
 
