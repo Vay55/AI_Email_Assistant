@@ -8,6 +8,12 @@ The assistant performs multiple tasks such as summarization, reply generation, t
 
 ---
 
+## DEMO
+
+![App_video](EmailAI.mp4)
+
+---
+
 ## Why I Built This
 
 I built this project to explore how large language models can be integrated into real-world productivity tools. I was particularly interested in how prompt design, system structure, and output handling affect the quality and reliability of AI-generated responses.
